@@ -54,12 +54,12 @@ INSERT INTO DimEmployee (employee_id, first_name, last_name, gender, birthdate, 
 
 -- Insert data table DimCategory
 
-INSERT INTO TABLE DimCategory (category_id, category_name) VALUES
+INSERT INTO DimCategory (category_id, category_name) VALUES
 (1,'Smartphones and Tablets'),
 (2,'Laptops and PCs'),
 (3,'Smart Home Devices'),
 (4,'Wearable Technology'),
-(5,'Home Entertainment Systems')
+(5,'Home Entertainment Systems');
 
 -- Insert data table DimProduct
 
