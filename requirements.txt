@@ -1,5 +1,5 @@
 postgres
 PyMySQL
 sqlalchemy
-Faker==0.7.4
+Faker
 pandas

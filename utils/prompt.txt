@@ -1,0 +1,93 @@
+----- Insert data table DimLocation -----
+
+Write sql command for insert real data into table created by this command
+
+CREATE TABLE IF NOT EXISTS DimLocation(
+    location_id INTEGER PRIMARY KEY,
+    address VARCHAR(200) NOT NULL
+);
+
+----- Insert data table DimEmployee -----
+
+Write sql command for insert real data into table created by this command
+
+CREATE TABLE IF NOT EXISTS DimEmployee(
+    employee_id INTEGER PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    gender VARCHAR(2) NOT NULL,
+    birthdate DATE NOT NULL,
+    address VARCHAR(200) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    role VARCHAR(20) NOT NULL
+);
+
+The gender must only have 'M' and 'F', the birthdate in format 'YYYY-MM-DD',
+There are 1 CEO, 3 Manager, 15 Seller, 3 Accountant, 10 Staff.
+
+----- Insert data table DimCategory -----
+
+Give me 5 categories are popular in electronics and smart device store.
+
+----- Insert data table DimProduct -----
+
+Write sql command for insert  30 rows of real data into table created by this command
+
+CREATE TABLE IF NOT EXISTS DimProduct(
+    product_id INTEGER PRIMARY KEY,
+    product_name VARCHAR(200) NOT NULL,
+    unit_price DECIMAL(10,2) NOT NULL,
+    category_id INTEGER NOT NULL,
+    manufacturer VARCHAR(100)
+);
+
+the product name given base on these categories Smartphones and Tablets,
+Laptops and PCs, Smart Home Devices, Wearable Technology, Home Entertainment Systems.
+and the category_id is correspond to this mapping
+
+Smartphones and Tablets = 1
+Laptops and PCs = 2
+Smart Home Devices = 3
+Wearable Technology = 4
+Home Entertainment Systems = 5
+
+Only use 1 insert command.
+
+----- Generate data table DimCustomer -----
+
+Write script to generate data using Fake library in python for generating 2000 rows data
+created by this sql script and export to csv file with the name customer.csv
+
+CREATE TABLE IF NOT EXISTS DimCustomer(
+    customer_id INTEGER PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    gender VARCHAR(2),
+    birthdate DATE,
+    address VARCHAR(200),
+    email VARCHAR(100),
+    phone VARCHAR(20)
+);
+
+The gender must only have 'M' and 'F', the birthdate in format 'YYYY-MM-DD',
+address, email and phone can be some null values.
+
+----- Generate data table FactImport -----
+
+Write script to generate data using Fake library in python for generating 2000 rows data
+created by this sql script 
+
+CREATE TABLE IF NOT EXISTS FactSales(
+    sale_id SERIAL PRIMARY KEY,
+    employee_id INTEGER NOT NULL,
+    location_id INTEGER NOT NULL,
+    customer_id INTEGER NOT NULL,
+    date_sale DATE NOT NULL
+);
+
+The employee_id must be between 6-20
+The location_id must be between 1-5
+
+
+----- Generate data table FactSales -----
