@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS DimCustomer(
 
 The gender must only have 'M' and 'F', the birthdate in format 'YYYY-MM-DD',
 address, email and phone can be some null values.
+phone number have maximum lenght is 15
 
 ----- Generate data table FactImport -----
 

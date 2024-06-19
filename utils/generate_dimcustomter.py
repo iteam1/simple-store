@@ -1,7 +1,6 @@
 import csv
 from faker import Faker
 import random
-from datetime import datetime, timedelta
 
 # Create Faker instance
 fake = Faker()
@@ -21,15 +20,12 @@ with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
     # Generate and write rows
     for customer_id in range(1, num_rows + 1):
         gender = random.choice(['M', 'F'])
-        
-        # Generate birthdate between 18 to 90 years ago
-        end_date = datetime.now() - timedelta(days=18*365)  # at least 18 years ago
-        start_date = end_date - timedelta(days=(90-18)*365)  # up to 90 years ago
-        birthdate = fake.date_between(start_date=start_date, end_date=end_date).strftime('%Y-%m-%d')
-        
+        birthdate = fake.date_of_birth(minimum_age=18, maximum_age=90).strftime('%Y-%m-%d')
         address = fake.address() if random.random() > 0.2 else None  # 80% chance of having an address
         email = fake.email() if random.random() > 0.2 else None  # 80% chance of having an email
-        phone = fake.phone_number() if random.random() > 0.2 else None  # 80% chance of having a phone number
+        
+        # Generate phone number with maximum length of 15
+        phone = fake.phone_number()[:15] if random.random() > 0.2 else None  # 80% chance of having a phone number
         
         writer.writerow({
             'customer_id': customer_id,
