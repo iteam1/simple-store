@@ -3,7 +3,7 @@
 '''
 import pandas
 import psycopg2
-from config.config import config_postgres
+from config import config_postgres
 
 def connect():
     # init
