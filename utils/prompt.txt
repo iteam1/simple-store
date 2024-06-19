@@ -75,6 +75,9 @@ address, email and phone can be some null values, phone number have maximum leng
 
 ----- Generate data table FactImport -----
 
+
+----- Generate data table FactSales -----
+
 Write script to generate data using Fake library in python for generating 5000 rows data
 created by this sql script 
 
@@ -89,7 +92,62 @@ CREATE TABLE IF NOT EXISTS FactSales(
 The employee_id must be between 6-20
 The location_id must be between 1-5
 The customer_id must be between 0 and 2000 and 60% of data have customer_id = 0
-the date_sale in format 'YYYY-MM-DD' and start from Jan-2023 to Jun-2024
+The date_sale in format 'YYYY-MM-DD' and start from Jan-2023 to Jun-2024
+and sale_id auto increase from 0
+
+----- Generate data table DimDetailSale -----
+
+Write script to generate data using Fake library in python for generating 12000 rows data
+created by this sql script
+
+CREATE TABLE IF NOT EXISTS DimDetailSale(
+    detail_sale_id SERIAL PRIMARY KEY,
+    sale_id SERIAL NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL
+);
+
+The detail_sale_id auto increase from 0
+The sale_id must be between 1 to 5000 and can be repeatable
+The product_id must be between 1 to 60
+The quantity can be between 1 to 100
 
 
------ Generate data table FactSales -----
+----- Generate data table FactImport -----
+
+Write script to generate data using Fake library in python for generating 200 rows data
+created by this sql script
+
+CREATE TABLE IF NOT EXISTS FactImport(
+    import_id SERIAL PRIMARY KEY,
+    employee_id INTEGER NOT NULL,
+    location_id INTEGER NOT NULL,
+    date_import DATE NOT NULL
+);
+
+The import_id must auto increase from 0
+The date_import in format 'YYYY-MM-DD'
+and have randomly value start from Dec-2022 to May-2024 and each month of year must have at least 1 date.
+The location_id must be between 1-5.
+The employee_id start from 24-35.
+Export to csv file name fact_import_data.csv
+
+----- Generate data table FactImport -----
+
+Write script to generate data using Fake library in python for generating data for the table 
+created by this sql script and export to csv file.
+
+CREATE TABLE IF NOT EXISTS DimDetailImport(
+    detail_import_id SERIAL PRIMARY KEY,
+    import_id SERIAL NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL
+);
+
+detail_import_id must be auto-incrementing from 0
+Import_id must start from 0 to 200 and can repeat
+and a value must appear at least 5 times and a maximum of 200 times.
+The product_id must be in the range 1-60 and can repeat.
+Make sure each product_id appear at least 60 rows.
+The quantity must be between 5-50.
+There must be no blank column.
