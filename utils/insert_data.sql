@@ -12,6 +12,9 @@ VALUES
 
 -- Insert data table DimEmployee
 
+INSERT INTO dimcustomer (customer_id, first_name, last_name) VALUES
+	(0,'unknown','unknown');
+
 INSERT INTO DimEmployee (employee_id, first_name, last_name, gender, birthdate, address, email, phone, role) VALUES
 (1, 'John', 'Doe', 'M', '1980-01-15', '123 Main St, Springfield, IL 62701', 'john.doe@example.com', '555-1234', 'CEO'),
 (2, 'Jane', 'Smith', 'F', '1985-02-20', '456 Elm St, Chicago, IL 60605', 'jane.smith@email.com', '555-5678', 'Manager'),

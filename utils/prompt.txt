@@ -75,7 +75,7 @@ address, email and phone can be some null values, phone number have maximum leng
 
 ----- Generate data table FactImport -----
 
-Write script to generate data using Fake library in python for generating 2000 rows data
+Write script to generate data using Fake library in python for generating 5000 rows data
 created by this sql script 
 
 CREATE TABLE IF NOT EXISTS FactSales(
@@ -88,6 +88,8 @@ CREATE TABLE IF NOT EXISTS FactSales(
 
 The employee_id must be between 6-20
 The location_id must be between 1-5
+The customer_id must be between 0 and 2000 and 60% of data have customer_id = 0
+the date_sale in format 'YYYY-MM-DD' and start from Jan-2023 to Jun-2024
 
 
 ----- Generate data table FactSales -----
